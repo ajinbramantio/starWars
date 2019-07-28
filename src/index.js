@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import Routes from './routes'
 import store from './store'
-import './assets/style/index.sass'
-import modules from './modules'
-// import App from './App'
+
+import './index.css'
+import models from './models'
 import * as serviceWorker from './serviceWorker'
 
 const RootComponent = (
@@ -16,8 +16,8 @@ const RootComponent = (
 
 ReactDOM.render(RootComponent, document.getElementById('root'))
 
-if (modules.hot) {
-  modules.hot.apply()
+if (models.hot) {
+  models.hot.apply()
 }
 
 // If you want your app to work offline and load faster, you can change

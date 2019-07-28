@@ -1,11 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import { getFilms } from '../models/home/actions'
-import { getFilmDetail } from '../models/filmDetail/actions'
-import { getSpecies } from '../models/species/actions'
-import { Loading } from './Loading'
-import Header from '../components/Header'
+import { getFilms } from '../../models/home/actions'
+import { getFilmDetail } from '../../models/filmDetail/actions'
+import { getSpecies } from '../../models/species/actions'
+import { Loading } from '../Loading'
+import Header from '../../components/Header'
 
 import { TablesSpecies } from './TablesSpecies'
 

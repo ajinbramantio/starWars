@@ -1,39 +1,42 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { getFilms } from '../modules/home/actions'
+import { Link } from 'react-router-dom'
+import { getFilms } from '../models/home/actions'
 
-import Card from './Card'
-import Header from '../components/Headers'
+import Header from '../components/Header'
+import { Loading } from './Loading'
 
-import '../assets/style/globalStyle.sass'
 class Home extends React.Component {
-  constructor() {
-    super()
-    this.state = {
-      movie: []
-    }
-  }
-
-  Image(id) {
-    return `/images/movies/${id}.jpg`
-  }
-
   componentDidMount() {
     this.props.getFilms()
   }
-
   render() {
+    // console.log(this.props.films.length)
+
     return (
       <div>
         <Header />
         <div>
-          {this.props.films.data.map((film, index) => {
-            return (
-              <div key={index} style={{ display: 'inline-block' }}>
-                <Card detail={film} index={index} key={index} />
-              </div>
-            )
-          })}
+          {this.props.films.length === undefined ||
+          this.props.films.length === 0 ? (
+            <Loading />
+          ) : (
+            this.props.films.map((film, i) => {
+              return (
+                <Link to={`/film/${i}`} key={i}>
+                  <img
+                    src={`/images/movies/${film.episode_id}.jpg`}
+                    style={{
+                      height: '40vh',
+                      width: '18vw',
+                      margin: '20px'
+                    }}
+                    alt=""
+                  />
+                </Link>
+              )
+            })
+          )}
         </div>
       </div>
     )
@@ -41,9 +44,8 @@ class Home extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  films: state.film
+  films: state.films.data
 })
-
 const mapDispatchToProps = {
   getFilms
 }
