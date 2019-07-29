@@ -25,22 +25,22 @@ You will also see any lint errors in the console.
 
 ## STARWARS
 
-| Endpoint          | Method | Description        |
-| ----------------- | ------ | ------------------ |
-| `/`               | GET    | Get All Movie      |
-| `/films/:movieId` | GET    | Get Movie By Id    |
-| `/characters`     | GET    | Get All characters |
-| `/species`        | GET    | Get All species    |
-| `/planets`        | GET    | Get All planets    |
+| Endpoint                    | Method | Description               |
+| --------------------------- | ------ | ------------------------- |
+| `/`                         | GET    | Get All Movie             |
+| `/film/:movieId`            | GET    | Get Movie By Id           |
+| `/film/:movieId/characters` | GET    | Get Characters By MovieId |
+| `/film/:movieId/planets`    | GET    | Get Planets By MovieId    |
+| `/film/:movieId/species`    | GET    | Get Species By MovieId    |
 
 # PROSESS
 
 ```sh
 masuk ke page pertama, pilih film masuk ke halaman detail
 di bagian bawah ada menu footer, menu footer terdiri dari character, planets, species
-pilih character muncul data character,
-pilih planets muncul data planets,
-pilih species muncul data species,
+pilih character muncul data character berdasrkan episode film,
+pilih planets muncul data planets berdasrkan episode film,
+pilih species muncul data species berdasrkan episode film,
 title star Wars di Header adalah tomobl untuk kembali ke Halaman Pertama
 ```
 
